@@ -1,0 +1,287 @@
+{
+  "Affenpinscher": [
+    "Schwarz",
+    "Belge",
+    "Loh",
+    "Silber",
+    "Rot",
+    "Grau"
+  ],
+  "Afghanischer Windhund": [
+    "Schwarz",
+    "Blau",
+    "Rot",
+    "Creme",
+    "Silber",
+    "Weiß"
+  ],
+  "Airedale Terrier": [
+    "Loh"
+  ],
+  "Akita": [
+    "Rot",
+    "Schwarz",
+    "Grau",
+    "Weiß",
+    "Rotbrindle",
+    "Schwarzbrindle",
+    "Silberbrindle"
+  ],
+  "Alaskan Malamute": [
+    "Black & White",
+    "Alaskan Seal & White",
+    "Wolfsable & White",
+    "Wolfsgrau & White",
+    "Silber & White",
+    "Red & White",
+    "White"
+  ],
+  "Alpenländische Dachsbracke": [
+    "Hirschrot",
+    "Schwarzbraun"
+  ],
+  "Altdänischer Vorstehhund": [
+    "Weiß-Braun"
+  ],
+  "American Akita": [
+    "Rot/Weiß",
+    "Schwarz/Wieß",
+    "Grau/Weiß",
+    "Rotbrindle",
+    "Schwarzbrindle"
+  ],
+  "American Cocker Spaniel": [
+    "Schwarz",
+    "Schwarz/Loh",
+    "Schwarz /Weiß",
+    "Schwarz/Weiß/Loh",
+    "Schwarz/Schimmel",
+    "Schwarz/Schimmel/Loh",
+    "Braun",
+    "Braun/Loh",
+    "Braun/Schimmel",
+    "Braun/Schimmel/Loh Braun/Weiß",
+    "Rot",
+    "Rot/Weiß",
+    "Rot/Weiß/Loh",
+    "Black/Sable"
+  ],
+  "American Foxhound": [
+    "Weiß",
+    "Dreifarbig",
+    "White & Cream",
+    "Loh",
+    "Blau",
+    "Rot"
+  ],
+  "American Pitbull Terrier": [
+    "Schwarz",
+    "Weiß",
+    "Stromung",
+    "Reh",
+    "Loh",
+    "Blau",
+    "Rot",
+    "Grau",
+    "Braun"
+  ],
+  "American Staffordshire Terrier": [
+    "Schwarz",
+    "Weiß",
+    "Stromung",
+    "Reh",
+    "Sable",
+    "Blau",
+    "Braun"
+  ],
+  "American Water Spaniel": [
+    "Leberbraun",
+    "Schokoladenbraun",
+    "Braun"
+  ],
+  "Appenzeller Sennenhund": [
+    "Schwarz ( tricolor)",
+    "Fuchsbraun ( braun weiß)",
+    "Dunkelbraun ( tricolor)",
+    "Grau ( tricolor)",
+    "Schilt"
+  ],
+  "Australian Cattle Dog": [
+    "Blue speckled",
+    "Red speckled"
+  ],
+  "Australian Kelpie": [
+    "Black",
+    "Black/Tan",
+    "Blue",
+    "Blue/Tan",
+    "Brown",
+    "Brown/Tan",
+    "Fawn",
+    "Fawn/tan",
+    "Cream"
+  ],
+  "Australian Shepherd": [
+    "Black bi w/t",
+    "Black tri c/w",
+    "Black bi c/t",
+    "Red tri c/w",
+    "Red bi w/t",
+    "Red bi c/t",
+    "Blue merle c/w",
+    "Blue merle bi w/t",
+    "Blue merle bi c/t",
+    "Red merle c/w",
+    "Red merle bi w/t",
+    "Red merle bi c/t"
+  ],
+  "Basenji": [
+    "Schwarz",
+    "Loh/Weiß",
+    "Rot/Weiß; Schwarz/Weiß",
+    "Brindle"
+  ],
+  "Basset Hound": [
+    "Lemon/White",
+    "Tricolor",
+    "Red/White",
+    "Brown/White",
+    "Black/White"
+  ],
+  "Bayerischer Gebirgsschweißhund": [
+    "Rotbraun",
+    "Tiefrot",
+    "Hirschrot",
+    "Rotgelb",
+    "Fahlgelb",
+    "Rotgrau"
+  ],
+  "Beagle": [
+    "Black Red & White",
+    "Black Tan & Bluetick",
+    "Black Tan & White",
+    "Blue Tan & White",
+    "Brown & White",
+    "Brown White & Tan",
+    "Lemon & White",
+    "Red & White",
+    "Tan & White"
+  ],
+  "Bearded Collie": [
+    "black/white",
+    "black/tricolour",
+    "blue/white",
+    "brown/white",
+    "brown/tricolour",
+    "fawn/white",
+    "fawn/tricolour"
+  ],
+  "Beauceron": [
+    "Schwarz und brand",
+    "Harlekin"
+  ],
+  "Belgischer Zwerggriffon": [
+    "Schwarz",
+    "Belge",
+    "Schwarz und Loh",
+    "Blau",
+    "Rot",
+    "Braun"
+  ],
+  "Berger Blanc Suisse": [
+    "Weiß"
+  ],
+  "Berner Sennenhund": [
+    "Black tri"
+  ],
+  "Bernhardiner": [
+    "Brownish-yellow",
+    "Red-White",
+    "Reddish-brown Brindle",
+    "Reddish-brown Splash",
+    "Reddish-brown Mantle"
+  ],
+  "Bichon Frisé": [
+    "Weiß",
+    "White & Apricot",
+    "White & Cream"
+  ],
+  "Bobtail": [
+    "black/white",
+    "grey/white"
+  ],
+  "Bologneser": [
+    "Weiß"
+  ],
+  "Border Collie": [
+    "black/white",
+    "black/white/tan",
+    "black/merle",
+    "black/merle/tan",
+    "seal/white",
+    "chocolate/white",
+    "chocolate/white/tan",
+    "chocolate/merle",
+    "chocolate/merle/tan",
+    "red/white",
+    "red/merle",
+    "slate/white",
+    "slate/white/tan",
+    "slate/merle",
+    "slate/merle/tan",
+    "lilac/white",
+    "lilac/white/tan",
+    "lilac/merle",
+    "lilac/merle/tan",
+    "black/sable/white",
+    "chocolate/sable/white",
+    "slate/sable/white",
+    "sable/merle"
+  ],
+  "Border Terrier": [
+    "Red",
+    "Wheat",
+    "Grizzle & Tan",
+    "Blue & Tan"
+  ],
+  "Boston Terrier": [
+    "Brindle",
+    "Black",
+    "Seal"
+  ],
+  "Briard": [
+    "Noir",
+    "Fauve",
+    "Gris",
+    "Bleue"
+  ],
+  "Bull Terrier": [
+    "White",
+    "White & Brindle",
+    "White & Red",
+    "White & Red Smut",
+    "White & Black Tan",
+    "White & Fawn",
+    "White & Fawn Smut",
+    "Red",
+    "Red & White",
+    "Red Smut",
+    "Red Smut & White",
+    "Black Brindle",
+    "Black Brindle & White",
+    "Brindle",
+    "Brindle & White",
+    "Black & Tan",
+    "Black Tan & White",
+    "Fawn Smut & White",
+    "Fawn Smut",
+    "Fawn",
+    "Fawn & White"
+  ],
+  "Cavalier King Charles Spaniel": [
+    "Blenheim",
+    "Tricolour",
+    "Black & Tan",
+    "Ruby"
+  ]
+}
