@@ -1,5 +1,4 @@
-// App.tsx — floating (transparent) Dogs/Matings + SafeArea verde global, fără headere
-
+// App.tsx — floating (transparent) Dogs/Matings + SafeArea verde global
 import { useFonts, Inter_400Regular, Inter_600SemiBold } from '@expo-google-fonts/inter';
 import * as SplashScreen from 'expo-splash-screen';
 import { useEffect, useCallback } from 'react';
@@ -8,6 +7,7 @@ import {
   Theme,
   useNavigation,
   CommonActions,
+  getFocusedRouteNameFromRoute,
 } from '@react-navigation/native';
 import { SafeAreaProvider, SafeAreaView, useSafeAreaInsets } from 'react-native-safe-area-context';
 import { navTheme, paperTheme, colors } from './src/theme';
@@ -56,6 +56,74 @@ const DarkNav: Theme = {
     text: colors.text,
   },
 };
+
+/** — Header global reutilizabil (nativ Stack) — */
+function AppHeader({
+  navigation,
+  route,
+  back,
+  options,
+}: {
+  navigation: any;
+  route: any;
+  back: any;
+  options: any;
+}) {
+  const insets = useSafeAreaInsets();
+
+  // Titlul: daca e Root (Tabs), luam subruta activa (Dogs/Matings); altfel folosim options.title / route.name.
+  let title = options?.title ?? route?.name ?? '';
+  if (route?.name === 'Root') {
+    const rn = getFocusedRouteNameFromRoute(route) ?? 'Dogs';
+    title = rn;
+  }
+
+  return (
+    <View
+      style={{
+        paddingTop: 6,
+        backgroundColor: 'transparent',
+      }}
+    >
+      <View
+        style={{
+          paddingHorizontal: 16,
+          height: 44,
+          flexDirection: 'row',
+          alignItems: 'center',
+          justifyContent: 'center',
+        }}
+      >
+        {/* Sageata back mica — stil identic cu headerBackBtn din screens */}
+        <View style={{ position: 'absolute', left: 12 }}>
+          {back ? (
+            <TouchableOpacity
+              onPress={() => navigation.goBack()}
+              accessibilityLabel="Go back"
+              style={{
+                height: 32,
+                width: 32,
+                alignItems: 'center',
+                justifyContent: 'center',
+                borderRadius: 10,
+                borderWidth: 1,
+                borderColor: colors.border,
+                backgroundColor: 'rgba(255,255,255,0.06)',
+              }}
+            >
+              <Ionicons name="chevron-back" size={20} color={colors.text} />
+            </TouchableOpacity>
+          ) : null}
+        </View>
+
+        {/* Titlu centrat */}
+        <Text style={{ color: colors.text, fontSize: 18, fontWeight: '700' }} numberOfLines={1}>
+          {title}
+        </Text>
+      </View>
+    </View>
+  );
+}
 
 /** — Butoane plutitoare complet transparente — */
 function FloatingTabs() {
@@ -119,8 +187,15 @@ function FloatingTabs() {
   );
 }
 
-/** — Tabs fără tab bar — */
-function Tabs() {
+/** — Tabs fara tab bar — */
+function Tabs({ navigation, route }: any) {
+  // Important: pentru ca headerul sa poata afi?a corect titlul pe Root, setam dinamic options.title
+  const focused = getFocusedRouteNameFromRoute(route) ?? 'Dogs';
+  // set Options pe navigatorul parinte (Stack) — titlul pentru Root
+  useEffect(() => {
+    navigation.setOptions?.({ title: focused });
+  }, [focused, navigation]);
+
   return (
     <View style={{ flex: 1 }}>
       <Tab.Navigator screenOptions={{ headerShown: false, tabBarStyle: { display: 'none' } }}>
@@ -173,13 +248,20 @@ export default function App() {
               <View style={{ flex: 1 }}>
                 <Stack.Navigator
                   screenOptions={{
-                    headerShown: false, // ❌ nu apare header pe nici un screen
+                    // ?? Header nativ PORNIT + custom global
+                    headerShown: true,
+                    header: (props) => <AppHeader {...props} />,
                     contentStyle: { backgroundColor: colors.bg },
                   }}
                 >
-                  <Stack.Screen name="Root" component={Tabs} />
+                  {/* Root (Tabs) — titlu dinamic setat din Tabs */}
+                  <Stack.Screen
+                    name="Root"
+                    component={Tabs}
+                    options={{ title: 'Dogs' }}
+                  />
 
-                  {/* Restul screen-urilor */}
+                  {/* Restul screen-urilor (nu le atingem) */}
                   <Stack.Screen name="DogMenu" component={DogMenuScreen} />
                   <Stack.Screen name="QuickAddDog" component={QuickAddDogScreen} />
                   <Stack.Screen name="MatingForm" component={MatingFormScreen} />
