@@ -8,6 +8,7 @@ import {
   useNavigation,
   CommonActions,
   getFocusedRouteNameFromRoute,
+  createNavigationContainerRef, // ADDED
 } from '@react-navigation/native';
 import { SafeAreaProvider, SafeAreaView, useSafeAreaInsets } from 'react-native-safe-area-context';
 import { navTheme, paperTheme, colors } from './src/theme';
@@ -40,7 +41,7 @@ import * as NavigationBar from 'expo-navigation-bar';
 import DewormingScreen from './src/screens/DewormingScreen';
 
 const DEBUG_SAFE = true;
-const DEBUG_GREEN = '#00C853';
+const DEBUG_GREEN = '#0b0f1a';
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -210,6 +211,43 @@ function Tabs({ navigation, route }: any) {
 export default function App() {
   const [fontsLoaded] = useFonts({ Inter_400Regular, Inter_600SemiBold });
 
+  // ADDED — ref + mapa pentru a afi?a calea exacta
+  const navRef = createNavigationContainerRef();
+
+  const SCREEN_PATHS: Record<string, string> = {
+    // Tabs
+    Root: 'src/(tabs)',
+    Dogs: 'src/screens/DogsGridScreen.tsx',
+    Matings: 'src/screens/MatingsScreen.tsx',
+    // Stack
+    DogMenu: 'src/screens/DogMenuScreen.tsx',
+    QuickAddDog: 'src/screens/QuickAddDogScreen.tsx',
+    MatingForm: 'src/screens/MatingFormScreen.tsx',
+    DogForm: 'src/screens/DogFormScreen.tsx',
+    GeneticsForm: 'src/screens/GeneticsFormScreen.tsx',
+    VetRecordForm: 'src/screens/VetRecordFormScreen.tsx',
+    GeneticsList: 'src/screens/GeneticsListScreen.tsx',
+    VetRecordsList: 'src/screens/VetRecordsListScreen.tsx',
+    MatingDetails: 'src/screens/MatingDetailsScreen.tsx',
+    AddPuppy: 'src/screens/AddPuppyScreen.tsx',
+    PuppyProfile: 'src/screens/PuppyProfileScreen.tsx',
+    PuppyWeightChart: 'src/screens/PuppyWeightChartScreen.tsx',
+    AddOrEditWeight: 'src/screens/AddOrEditWeightScreen.tsx',
+    AllPuppyWeightChart: 'src/screens/AllPuppyWeightChartScreen.tsx',
+    Deworming: 'src/screens/DewormingScreen.tsx',
+  };
+
+  const logRoute = () => {
+    try {
+      const r = navRef.getCurrentRoute();
+      const name = r?.name;
+      if (!name) return;
+      const path = SCREEN_PATHS[name] ?? name;
+      console.log(`you are in: ${path}`);
+    } catch {}
+  };
+  // END ADDED
+
   const onLayoutRootView = useCallback(async () => {
     if (fontsLoaded) await SplashScreen.hideAsync();
   }, [fontsLoaded]);
@@ -243,7 +281,12 @@ export default function App() {
             translucent={false}
             backgroundColor={DEBUG_SAFE ? DEBUG_GREEN : colors.bg}
           />
-          <NavigationContainer theme={DarkNav}>
+          <NavigationContainer
+            theme={DarkNav}
+            ref={navRef}                 // ADDED
+            onReady={logRoute}           // ADDED (log la start)
+            onStateChange={logRoute}     // ADDED (log la fiecare navigare)
+          >
             <GestureHandlerRootView style={{ flex: 1 }} onLayout={onLayoutRootView}>
               <View style={{ flex: 1 }}>
                 <Stack.Navigator
